@@ -35,11 +35,11 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="..\..\public\Archita Aggarwal Resume.pdf"
-                download
+                href="Resume.pdf"
+                download="Archita-Resume.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
-                Download CV
+                Download Resume
               </a>
             </div>
           </div>
