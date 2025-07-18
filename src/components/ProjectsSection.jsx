@@ -61,46 +61,53 @@ export const ProjectsSection = () => {
                 />
               </div>
 
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div className="bg-card rounded-lg shadow h-[250px] flex flex-col justify-between p-6">
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="p-1.5 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    {project.demoUrl !== "#" && (
+                    <h3 className="text-xl font-semibold mb-1 text-left">{project.title}</h3>
+                    <p className="text-muted-foreground text-sm text-left">{project.description}</p>
+                  </div>
+
+                  <div className="flex justify-between items-center mt-6">
+                    <div className="flex space-x-3">
+                      {project.demoUrl !== "#" && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
                       <a
-                        href={project.demoUrl}
+                        href={project.githubUrl}
                         target="_blank"
                         className="text-foreground/80 hover:text-primary transition-colors duration-300"
                       >
-                        <ExternalLink size={20} />
+                        <Github size={20} />
                       </a>
+                    </div>
+
+                    {project.status === "Ongoing" && (
+                      <span className="px-3 py-1 rounded-2xl font-semibold text-sm bg-green-500 text-green-900">
+                        {project.status}
+                      </span>
                     )}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                    
                   </div>
-                  {project.status === "Ongoing" && (
-                    <span className="px-3 py-1 rounded-2xl font-semibold text-sm bg-green-500 text-green-900">
-                      {project.status}
-                    </span>
-                  )}
                 </div>
               </div>
+
             </div>
           ))}
         </div>

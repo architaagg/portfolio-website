@@ -77,7 +77,7 @@ export const ContactSection = () => {
               Contact Information
             </h3>
 
-            <div className="space-y-6 justify-center">
+            <div className="space-y-6 justify-left">
               <div className="ml-28 flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}
@@ -119,9 +119,9 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <div className="pt-8">
+            <div className="ml-32 pt-8 text-left space-x-4">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              <div className="flex space-x-4 justify-left">
                 <a href="https://www.linkedin.com/in/archita-aggarwal-173b892b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
                   <Linkedin  />
                 </a>

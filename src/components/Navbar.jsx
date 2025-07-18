@@ -25,8 +25,8 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        "fixed w-full z-40 transition-all duration-300 bg-black/20 backdrop-blur-md shadow-md",
+        isScrolled ? "py-3" : "py-5"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -34,14 +34,14 @@ export const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
         >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground"> Archita </span>{" "}
+          <span className="relative z-10 text-foreground">
+            <span className="text-glow text-primary pl-25"> Archita </span>{" "}
             Portfolio
           </span>
         </a>
 
         {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 pr-25">
           {navItems.map((item, key) => (
             <a
               key={key}
